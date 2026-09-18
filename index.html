@@ -14,14 +14,14 @@
   <style>
     :root{
       --black:#050505;
-      --black2:#0b0b0b;
+      --black2:#0a0a0a;
       --black3:#121212;
       --gold:#d6a72c;
-      --gold2:#f0c75e;
-      --white:#ffffff;
-      --gray:#bdbdbd;
+      --gold2:#f4ca5c;
+      --white:#fff;
+      --gray:#c2c2c2;
       --green:#25d366;
-      --border:rgba(255,255,255,.10);
+      --border:rgba(255,255,255,.12);
     }
 
     *{
@@ -43,13 +43,13 @@
     }
 
     img{
-      max-width:100%;
       display:block;
+      width:100%;
     }
 
     a{
-      color:inherit;
       text-decoration:none;
+      color:inherit;
     }
 
     .container{
@@ -57,7 +57,10 @@
       margin:auto;
     }
 
-    /* HEADER */
+    /* =========================
+       HEADER
+    ========================== */
+
     header{
       position:sticky;
       top:0;
@@ -76,24 +79,23 @@
     }
 
     .logo{
-      font-size:22px;
+      font-size:23px;
       font-weight:900;
-      letter-spacing:.5px;
     }
 
     .logo span{
-      color:var(--gold);
+      color:var(--gold2);
     }
 
     nav{
       display:flex;
       align-items:center;
-      gap:22px;
+      gap:20px;
     }
 
     nav a{
-      color:#ddd;
       font-size:14px;
+      color:#ddd;
       transition:.25s;
     }
 
@@ -103,7 +105,7 @@
 
     .nav-btn{
       background:var(--gold);
-      color:#111;
+      color:#111!important;
       padding:10px 17px;
       border-radius:8px;
       font-weight:800;
@@ -111,42 +113,50 @@
 
     .nav-btn:hover{
       background:var(--gold2);
-      color:#111;
     }
 
-    /* HERO */
+    /* =========================
+       HERO
+    ========================== */
+
     .hero{
-      min-height:650px;
+      min-height:680px;
       position:relative;
       display:flex;
       align-items:center;
-      background-image:
-        linear-gradient(rgba(0,0,0,.52),rgba(0,0,0,.78)),
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,.88),
+          rgba(0,0,0,.52),
+          rgba(0,0,0,.68)
+        ),
         url("https://commons.wikimedia.org/wiki/Special:Redirect/file/A%20cheeseburger.jpg");
+
       background-size:cover;
       background-position:center;
     }
 
     .hero-content{
       max-width:760px;
-      padding:90px 0;
+      padding:100px 0;
     }
 
     .badge{
       display:inline-block;
-      padding:8px 13px;
+      padding:8px 14px;
       border:1px solid rgba(214,167,44,.55);
-      background:rgba(214,167,44,.10);
+      background:rgba(214,167,44,.12);
       color:var(--gold2);
       border-radius:30px;
       font-size:12px;
       font-weight:800;
-      letter-spacing:.8px;
+      letter-spacing:1px;
       margin-bottom:20px;
     }
 
     .hero h1{
-      font-size:clamp(42px,7vw,78px);
+      font-size:clamp(43px,7vw,78px);
       line-height:1.02;
       margin-bottom:20px;
       font-weight:900;
@@ -157,16 +167,16 @@
     }
 
     .hero p{
-      color:#ddd;
       max-width:650px;
+      color:#e4e4e4;
       font-size:18px;
       margin-bottom:30px;
     }
 
     .buttons{
       display:flex;
-      gap:12px;
       flex-wrap:wrap;
+      gap:12px;
     }
 
     .btn{
@@ -190,9 +200,9 @@
     }
 
     .btn-outline{
-      border:1px solid rgba(255,255,255,.25);
+      border:1px solid rgba(255,255,255,.28);
+      background:rgba(255,255,255,.05);
       color:#fff;
-      background:rgba(255,255,255,.04);
     }
 
     .btn-outline:hover{
@@ -200,166 +210,199 @@
       color:var(--gold2);
     }
 
-    /* VISUAL STATS */
-    .visual-stats{
+    /* =========================
+       VISUAL FEATURES
+    ========================== */
+
+    .visual-section{
       background:#080808;
       padding:18px 0;
     }
 
-    .visual-stats-grid{
+    .visual-grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:12px;
     }
 
-    .visual-stat{
-      height:190px;
+    .visual-card{
+      height:220px;
       position:relative;
       overflow:hidden;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.10);
+      border-radius:16px;
+      border:1px solid var(--border);
       background:#111;
     }
 
-    .visual-stat img{
+    .visual-card img{
       position:absolute;
       inset:0;
       width:100%;
       height:100%;
       object-fit:cover;
-      transition:transform .6s ease;
+      transition:transform .7s ease;
     }
 
-    .visual-stat:hover img{
+    .visual-card:hover img{
       transform:scale(1.08);
     }
 
-    .visual-stat-overlay{
+    .visual-overlay{
       position:absolute;
       inset:0;
-      background:linear-gradient(
-        180deg,
-        rgba(0,0,0,.25),
-        rgba(0,0,0,.84)
-      );
+      background:
+        linear-gradient(
+          180deg,
+          rgba(0,0,0,.15) 10%,
+          rgba(0,0,0,.55) 48%,
+          rgba(0,0,0,.92) 100%
+        );
     }
 
-    .visual-stat-content{
+    .visual-content{
       position:absolute;
-      inset:0;
       z-index:2;
+      inset:0;
       display:flex;
       flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:20px;
+      justify-content:flex-end;
+      align-items:flex-start;
+      padding:24px;
     }
 
-    .visual-stat-icon{
-      font-size:38px;
+    .visual-icon{
+      font-size:36px;
       margin-bottom:8px;
-      filter:drop-shadow(0 3px 5px rgba(0,0,0,.7));
+      filter:drop-shadow(0 3px 5px #000);
     }
 
-    .visual-stat-content strong{
-      color:#fff;
-      font-size:20px;
+    .visual-content strong{
+      font-size:21px;
       letter-spacing:2px;
-      text-shadow:0 2px 8px rgba(0,0,0,.8);
+      margin-bottom:5px;
     }
 
-    .visual-stat-content span{
+    .visual-content p{
       color:#ddd;
-      font-size:12px;
-      margin-top:5px;
-      max-width:220px;
+      font-size:13px;
+      max-width:270px;
     }
 
-    /* SECTIONS */
+    /* =========================
+       SECTIONS
+    ========================== */
+
     section{
       padding:90px 0;
     }
 
     .section-head{
-      margin-bottom:40px;
       max-width:720px;
+      margin-bottom:40px;
     }
 
-    .section-head .small{
+    .small{
       color:var(--gold2);
       font-size:12px;
       font-weight:900;
       letter-spacing:2px;
       text-transform:uppercase;
-      margin-bottom:8px;
+      margin-bottom:9px;
     }
 
     .section-head h2{
-      font-size:clamp(30px,5vw,48px);
-      line-height:1.1;
-      margin-bottom:13px;
+      font-size:clamp(31px,5vw,49px);
+      line-height:1.08;
+      margin-bottom:14px;
     }
 
     .section-head p{
       color:var(--gray);
     }
 
-    /* MENU */
+    /* =========================
+       MENU
+    ========================== */
+
     .menu{
       background:var(--black2);
     }
 
-    .cards{
+    .product-grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:18px;
     }
 
-    .card{
-      background:var(--black3);
+    .product{
+      height:390px;
+      position:relative;
+      overflow:hidden;
+      border-radius:16px;
       border:1px solid var(--border);
-      border-radius:15px;
-      overflow:hidden;
-      transition:.3s;
+      background:#111;
     }
 
-    .card:hover{
-      transform:translateY(-5px);
-      border-color:rgba(214,167,44,.45);
-    }
-
-    .card-img{
-      height:220px;
-      overflow:hidden;
-    }
-
-    .card-img img{
+    .product img{
+      position:absolute;
+      inset:0;
       width:100%;
       height:100%;
       object-fit:cover;
-      transition:.5s;
+      transition:.6s;
     }
 
-    .card:hover .card-img img{
-      transform:scale(1.06);
+    .product:hover img{
+      transform:scale(1.07);
     }
 
-    .card-body{
-      padding:22px;
+    .product::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(0,0,0,.05) 15%,
+          rgba(0,0,0,.40) 45%,
+          rgba(0,0,0,.94) 100%
+        );
     }
 
-    .card-body h3{
-      font-size:22px;
-      margin-bottom:8px;
+    .product-content{
+      position:absolute;
+      z-index:2;
+      left:22px;
+      right:22px;
+      bottom:22px;
     }
 
-    .card-body p{
-      color:var(--gray);
+    .product-tag{
+      display:inline-block;
+      background:var(--gold);
+      color:#111;
+      padding:5px 9px;
+      border-radius:5px;
+      font-size:10px;
+      font-weight:900;
+      margin-bottom:10px;
+      text-transform:uppercase;
+    }
+
+    .product-content h3{
+      font-size:25px;
+      margin-bottom:7px;
+    }
+
+    .product-content p{
+      color:#ddd;
       font-size:14px;
     }
 
-    /* EXPERIENCE */
+    /* =========================
+       EXPERIENCE
+    ========================== */
+
     .experience{
       background:#080808;
     }
@@ -372,9 +415,10 @@
     }
 
     .experience-image{
-      height:480px;
-      border-radius:18px;
+      height:500px;
+      position:relative;
       overflow:hidden;
+      border-radius:18px;
       border:1px solid var(--border);
     }
 
@@ -382,6 +426,17 @@
       width:100%;
       height:100%;
       object-fit:cover;
+    }
+
+    .experience-image::after{
+      content:"Duchess Burguer";
+      position:absolute;
+      left:20px;
+      bottom:20px;
+      padding:9px 13px;
+      background:rgba(0,0,0,.72);
+      border-left:3px solid var(--gold);
+      font-weight:800;
     }
 
     .experience-content h2{
@@ -402,23 +457,25 @@
     .check-list{
       list-style:none;
       display:grid;
-      gap:13px;
+      gap:12px;
       margin:25px 0;
     }
 
     .check-list li{
       display:flex;
       gap:10px;
-      align-items:flex-start;
       color:#eee;
     }
 
-    .check-list li span{
+    .check-list span{
       color:var(--gold2);
-      font-weight:bold;
+      font-weight:900;
     }
 
-    /* EVENTS */
+    /* =========================
+       EVENTS
+    ========================== */
+
     .events{
       background:var(--black2);
     }
@@ -430,18 +487,20 @@
     }
 
     .event{
+      height:330px;
       position:relative;
-      height:300px;
-      border-radius:15px;
       overflow:hidden;
+      border-radius:16px;
       border:1px solid var(--border);
     }
 
     .event img{
+      position:absolute;
+      inset:0;
       width:100%;
       height:100%;
       object-fit:cover;
-      transition:.5s;
+      transition:.6s;
     }
 
     .event:hover img{
@@ -452,11 +511,12 @@
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(
-        180deg,
-        transparent 25%,
-        rgba(0,0,0,.88)
-      );
+      background:
+        linear-gradient(
+          180deg,
+          rgba(0,0,0,.05),
+          rgba(0,0,0,.88)
+        );
     }
 
     .event-content{
@@ -464,12 +524,17 @@
       z-index:2;
       left:18px;
       right:18px;
-      bottom:18px;
+      bottom:20px;
+    }
+
+    .event-icon{
+      font-size:28px;
+      margin-bottom:5px;
     }
 
     .event-content h3{
-      font-size:20px;
-      margin-bottom:4px;
+      font-size:21px;
+      margin-bottom:5px;
     }
 
     .event-content p{
@@ -477,7 +542,10 @@
       font-size:13px;
     }
 
-    /* GALLERY */
+    /* =========================
+       GALLERY
+    ========================== */
+
     .gallery{
       background:#080808;
     }
@@ -485,13 +553,14 @@
     .gallery-grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
-      gap:12px;
+      gap:13px;
     }
 
     .gallery-item{
-      height:250px;
+      height:270px;
+      position:relative;
       overflow:hidden;
-      border-radius:13px;
+      border-radius:14px;
       border:1px solid var(--border);
     }
 
@@ -499,14 +568,36 @@
       width:100%;
       height:100%;
       object-fit:cover;
-      transition:.5s;
+      transition:.6s;
     }
 
     .gallery-item:hover img{
       transform:scale(1.07);
     }
 
-    /* PROCESS */
+    .gallery-item::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        transparent 45%,
+        rgba(0,0,0,.80)
+      );
+    }
+
+    .gallery-caption{
+      position:absolute;
+      z-index:2;
+      left:17px;
+      bottom:15px;
+      font-weight:800;
+      font-size:14px;
+    }
+
+    /* =========================
+       PROCESS
+    ========================== */
+
     .process{
       background:var(--black2);
     }
@@ -520,19 +611,19 @@
     .process-card{
       background:var(--black3);
       border:1px solid var(--border);
-      padding:30px 24px;
       border-radius:15px;
+      padding:30px 24px;
     }
 
     .process-number{
-      width:42px;
-      height:42px;
-      border-radius:50%;
+      width:44px;
+      height:44px;
       display:flex;
       align-items:center;
       justify-content:center;
       background:var(--gold);
       color:#111;
+      border-radius:50%;
       font-weight:900;
       margin-bottom:20px;
     }
@@ -546,24 +637,31 @@
       font-size:14px;
     }
 
-    /* CTA */
+    /* =========================
+       CTA
+    ========================== */
+
     .cta{
       position:relative;
-      background-image:
-        linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.88)),
+      background:
+        linear-gradient(
+          rgba(0,0,0,.72),
+          rgba(0,0,0,.90)
+        ),
         url("https://commons.wikimedia.org/wiki/Special:Redirect/file/A%20cheeseburger.jpg");
+
       background-size:cover;
       background-position:center;
       text-align:center;
     }
 
     .cta-content{
-      max-width:750px;
+      max-width:760px;
       margin:auto;
     }
 
     .cta h2{
-      font-size:clamp(32px,5vw,54px);
+      font-size:clamp(34px,5vw,55px);
       line-height:1.08;
       margin-bottom:15px;
     }
@@ -573,7 +671,10 @@
       margin-bottom:25px;
     }
 
-    /* CONTACT */
+    /* =========================
+       CONTACT
+    ========================== */
+
     .contact{
       background:var(--black);
     }
@@ -587,17 +688,17 @@
     .contact-card{
       background:var(--black3);
       border:1px solid var(--border);
+      border-radius:16px;
       padding:30px;
-      border-radius:15px;
     }
 
     .contact-card h3{
-      margin-bottom:18px;
       font-size:23px;
+      margin-bottom:18px;
     }
 
     .contact-item{
-      padding:13px 0;
+      padding:14px 0;
       border-bottom:1px solid var(--border);
       color:#ddd;
     }
@@ -607,12 +708,29 @@
     }
 
     .contact-item strong{
-      color:var(--gold2);
       display:block;
+      color:var(--gold2);
       margin-bottom:3px;
     }
 
-    /* FOOTER */
+    /* =========================
+       DEMO
+    ========================== */
+
+    .demo-note{
+      background:#16110a;
+      border-top:1px solid rgba(214,167,44,.25);
+      border-bottom:1px solid rgba(214,167,44,.25);
+      padding:13px 20px;
+      text-align:center;
+      color:#d8c99f;
+      font-size:12px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
     footer{
       background:#030303;
       border-top:1px solid var(--border);
@@ -632,13 +750,16 @@
       color:#ddd;
     }
 
-    /* WHATSAPP */
+    /* =========================
+       WHATSAPP
+    ========================== */
+
     .whatsapp{
       position:fixed;
       right:20px;
       bottom:20px;
-      width:58px;
-      height:58px;
+      width:59px;
+      height:59px;
       border-radius:50%;
       background:var(--green);
       display:flex;
@@ -646,7 +767,7 @@
       justify-content:center;
       font-size:28px;
       z-index:999;
-      box-shadow:0 8px 25px rgba(0,0,0,.45);
+      box-shadow:0 8px 25px rgba(0,0,0,.5);
       transition:.25s;
     }
 
@@ -654,34 +775,34 @@
       transform:scale(1.08);
     }
 
-    /* DEMO NOTE */
-    .demo-note{
-      background:#16110a;
-      border-top:1px solid rgba(214,167,44,.25);
-      border-bottom:1px solid rgba(214,167,44,.25);
-      padding:12px 20px;
-      text-align:center;
-      color:#d8c99f;
-      font-size:12px;
-    }
+    /* =========================
+       RESPONSIVE
+    ========================== */
 
-    /* RESPONSIVE */
-    @media(max-width:900px){
+    @media(max-width:950px){
 
       nav{
         display:none;
       }
 
-      .cards{
+      .visual-grid{
         grid-template-columns:1fr;
       }
 
-      .experience-grid{
+      .visual-card{
+        height:190px;
+      }
+
+      .product-grid{
         grid-template-columns:1fr;
       }
 
       .event-grid{
         grid-template-columns:repeat(2,1fr);
+      }
+
+      .experience-grid{
+        grid-template-columns:1fr;
       }
 
       .process-grid{
@@ -696,11 +817,11 @@
     @media(max-width:700px){
 
       .hero{
-        min-height:600px;
+        min-height:620px;
       }
 
       .hero-content{
-        padding:70px 0;
+        padding:75px 0;
       }
 
       .hero h1{
@@ -713,14 +834,6 @@
 
       section{
         padding:65px 0;
-      }
-
-      .visual-stats-grid{
-        grid-template-columns:1fr;
-      }
-
-      .visual-stat{
-        height:160px;
       }
 
       .event-grid{
@@ -763,6 +876,10 @@
         width:100%;
       }
 
+      .product{
+        height:350px;
+      }
+
       .whatsapp{
         right:15px;
         bottom:15px;
@@ -773,8 +890,12 @@
 
 <body>
 
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER
+  ========================== -->
+
   <header>
+
     <div class="container nav">
 
       <a href="#inicio" class="logo">
@@ -782,33 +903,46 @@
       </a>
 
       <nav>
+
         <a href="#inicio">Início</a>
+
         <a href="#menu">Menu</a>
+
         <a href="#eventos">Eventos</a>
+
         <a href="#galeria">Galeria</a>
+
         <a href="#contacto">Contacto</a>
 
         <a
-          class="nav-btn"
-          href="https://wa.me/244922003274?text=Olá%20Duchess%20Burguer!%20Gostaria%20de%20saber%20mais%20sobre%20o%20menu."
+          href="https://wa.me/244922003274?text=Olá%20Duchess%20Burguer!%20Gostaria%20de%20saber%20mais."
           target="_blank"
-          rel="noopener">
+          rel="noopener"
+          class="nav-btn">
           WhatsApp
         </a>
+
       </nav>
 
     </div>
+
   </header>
 
-  <!-- HERO -->
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
   <main>
 
     <section class="hero" id="inicio">
+
       <div class="container">
+
         <div class="hero-content">
 
           <div class="badge">
-            🍔 FAST FOOD • EVENTOS • EXPERIÊNCIA
+            🍔 FAST FOOD • 🎉 EVENTOS • 📍 LUANDA
           </div>
 
           <h1>
@@ -817,109 +951,124 @@
           </h1>
 
           <p>
-            Hambúrgueres, cachorros-quentes, fahitas e soluções
-            gastronómicas para momentos especiais em Luanda.
+            Hambúrgueres, cachorros-quentes, fahitas e
+            soluções gastronómicas para refeições,
+            festas, aniversários e eventos especiais em Luanda.
           </p>
 
           <div class="buttons">
 
             <a
               class="btn btn-gold"
-              href="https://wa.me/244922003274?text=Olá%20Duchess%20Burguer!%20Gostaria%20de%20conhecer%20o%20menu."
-              target="_blank"
-              rel="noopener">
-              🍔 Ver o Menu
+              href="#menu">
+              🍔 Conhecer o Menu
             </a>
 
             <a
               class="btn btn-outline"
               href="#eventos">
-              🎉 Ver Eventos
+              🎉 Conhecer os Eventos
             </a>
 
           </div>
 
         </div>
+
       </div>
+
     </section>
 
-    <!-- VISUAL STATS -->
-    <section class="visual-stats">
 
-      <div class="container visual-stats-grid">
+    <!-- =========================
+         VISUAL FEATURES
+    ========================== -->
 
-        <div class="visual-stat">
+    <section class="visual-section">
+
+      <div class="container visual-grid">
+
+
+        <!-- FAST FOOD -->
+
+        <div class="visual-card">
 
           <img
             src="https://commons.wikimedia.org/wiki/Special:Redirect/file/A%20cheeseburger.jpg"
             alt="Hambúrguer"
             loading="lazy">
 
-          <div class="visual-stat-overlay"></div>
+          <div class="visual-overlay"></div>
 
-          <div class="visual-stat-content">
+          <div class="visual-content">
 
-            <div class="visual-stat-icon">
+            <div class="visual-icon">
               🍔
             </div>
 
             <strong>FAST FOOD</strong>
 
-            <span>
-              Sabor para todos os momentos
-            </span>
+            <p>
+              Hambúrgueres, cachorros-quentes e fahitas
+              preparados para momentos deliciosos.
+            </p>
 
           </div>
 
         </div>
 
 
-        <div class="visual-stat">
+        <!-- EVENTOS -->
+
+        <div class="visual-card">
 
           <img
             src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1000&q=80"
             alt="Evento e celebração"
             loading="lazy">
 
-          <div class="visual-stat-overlay"></div>
+          <div class="visual-overlay"></div>
 
-          <div class="visual-stat-content">
+          <div class="visual-content">
 
-            <div class="visual-stat-icon">
+            <div class="visual-icon">
               🎉
             </div>
 
             <strong>EVENTOS</strong>
 
-            <span>
-              Mais sabor para as suas celebrações
-            </span>
+            <p>
+              Aniversários, festas, convívios e
+              eventos corporativos com sabor.
+            </p>
 
           </div>
 
         </div>
 
 
-        <div class="visual-stat">
+        <!-- LUANDA -->
+
+        <div class="visual-card">
 
           <img
             src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Luanda%20from%20above.jpg"
-            alt="Vista de Luanda, Angola"
+            alt="Vista de Luanda"
             loading="lazy">
 
-          <div class="visual-stat-overlay"></div>
+          <div class="visual-overlay"></div>
 
-          <div class="visual-stat-content">
+          <div class="visual-content">
 
-            <div class="visual-stat-icon">
+            <div class="visual-icon">
               📍
             </div>
 
             <strong>LUANDA</strong>
 
-            <span>
-              Onde a experiência Duchess acontece
-            </span>
+            <p>
+              Rua Soba Mandume, Bairro Marçal,
+              próximo à Cidadela Desportiva.
+            </p>
 
           </div>
 
@@ -930,7 +1079,10 @@
     </section>
 
 
-    <!-- MENU -->
+    <!-- =========================
+         MENU
+    ========================== -->
+
     <section class="menu" id="menu">
 
       <div class="container">
@@ -946,33 +1098,38 @@
           </h2>
 
           <p>
-            Uma seleção de opções para diferentes gostos e momentos.
+            Conheça algumas das opções que podem
+            fazer parte da experiência Duchess Burguer.
           </p>
 
         </div>
 
 
-        <div class="cards">
+        <div class="product-grid">
+
 
           <!-- HAMBURGUER -->
-          <article class="card">
 
-            <div class="card-img">
+          <article class="product">
 
-              <img
-                src="https://commons.wikimedia.org/wiki/Special:Redirect/file/A%20cheeseburger.jpg"
-                alt="Hambúrguer Duchess Burguer"
-                loading="lazy">
+            <img
+              src="https://commons.wikimedia.org/wiki/Special:Redirect/file/A%20cheeseburger.jpg"
+              alt="Hambúrguer"
+              loading="lazy">
 
-            </div>
+            <div class="product-content">
 
-            <div class="card-body">
+              <div class="product-tag">
+                Fast Food
+              </div>
 
-              <h3>🍔 Hambúrgueres</h3>
+              <h3>
+                🍔 Hambúrgueres
+              </h3>
 
               <p>
-                Hambúrgueres preparados para proporcionar
-                uma experiência saborosa e marcante.
+                Uma opção clássica para quem procura
+                sabor, praticidade e uma refeição especial.
               </p>
 
             </div>
@@ -981,24 +1138,27 @@
 
 
           <!-- HOT DOG -->
-          <article class="card">
 
-            <div class="card-img">
+          <article class="product">
 
-              <img
-                src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Hotdog.PNG"
-                alt="Cachorro-quente"
-                loading="lazy">
+            <img
+              src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Hotdog.PNG"
+              alt="Cachorro-quente"
+              loading="lazy">
 
-            </div>
+            <div class="product-content">
 
-            <div class="card-body">
+              <div class="product-tag">
+                Fast Food
+              </div>
 
-              <h3>🌭 Cachorros-quentes</h3>
+              <h3>
+                🌭 Cachorros-quentes
+              </h3>
 
               <p>
-                Uma opção prática e saborosa para refeições,
-                encontros e eventos.
+                Uma alternativa prática e saborosa
+                para refeições, encontros e eventos.
               </p>
 
             </div>
@@ -1006,25 +1166,28 @@
           </article>
 
 
-          <!-- FAHITA -->
-          <article class="card">
+          <!-- FAHITAS -->
 
-            <div class="card-img">
+          <article class="product">
 
-              <img
-                src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Fajitas-small.png"
-                alt="Fahitas"
-                loading="lazy">
+            <img
+              src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Fajitas-small.png"
+              alt="Fahitas"
+              loading="lazy">
 
-            </div>
+            <div class="product-content">
 
-            <div class="card-body">
+              <div class="product-tag">
+                Especialidade
+              </div>
 
-              <h3>🌮 Fahitas</h3>
+              <h3>
+                🌮 Fahitas
+              </h3>
 
               <p>
-                Uma alternativa cheia de sabor para quem
-                procura algo diferente.
+                Uma opção diferente para quem procura
+                uma experiência cheia de sabor.
               </p>
 
             </div>
@@ -1038,16 +1201,20 @@
     </section>
 
 
-    <!-- EXPERIENCE -->
+    <!-- =========================
+         EXPERIENCE
+    ========================== -->
+
     <section class="experience">
 
       <div class="container experience-grid">
+
 
         <div class="experience-image">
 
           <img
             src="https://commons.wikimedia.org/wiki/Special:Redirect/file/A%20cheeseburger.jpg"
-            alt="Hambúrguer"
+            alt="Hambúrguer Duchess Burguer"
             loading="lazy">
 
         </div>
@@ -1055,22 +1222,19 @@
 
         <div class="experience-content">
 
-          <div class="section-head">
-
-            <div class="small">
-              Uma experiência diferente
-            </div>
-
-            <h2>
-              Comida que combina com o seu <span>momento.</span>
-            </h2>
-
+          <div class="small">
+            Uma experiência diferente
           </div>
 
+          <h2>
+            Comida que combina
+            com o seu <span>momento.</span>
+          </h2>
+
           <p>
-            Seja para uma refeição rápida ou para uma
-            celebração especial, a proposta é levar sabor
-            e praticidade para cada ocasião.
+            Da refeição rápida ao grande evento,
+            a proposta é levar sabor e praticidade
+            para diferentes ocasiões.
           </p>
 
           <ul class="check-list">
@@ -1097,7 +1261,7 @@
 
             <li>
               <span>✓</span>
-              Casamentos e ocasiões especiais
+              Ocasiões especiais
             </li>
 
           </ul>
@@ -1107,7 +1271,7 @@
             href="https://wa.me/244922003274?text=Olá%20Duchess%20Burguer!%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20para%20eventos."
             target="_blank"
             rel="noopener">
-            🎉 Quero informações sobre eventos
+            🎉 Informações sobre eventos
           </a>
 
         </div>
@@ -1117,7 +1281,10 @@
     </section>
 
 
-    <!-- EVENTS -->
+    <!-- =========================
+         EVENTS
+    ========================== -->
+
     <section class="events" id="eventos">
 
       <div class="container">
@@ -1133,8 +1300,8 @@
           </h2>
 
           <p>
-            Uma solução gastronómica pensada para
-            aniversários, festas, convívios e eventos corporativos.
+            Uma apresentação pensada para mostrar
+            rapidamente os principais tipos de eventos.
           </p>
 
         </div>
@@ -1142,25 +1309,37 @@
 
         <div class="event-grid">
 
+
+          <!-- ANIVERSÁRIO -->
+
           <article class="event">
 
             <img
               src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=900&q=80"
-              alt="Festa e celebração"
+              alt="Aniversário"
               loading="lazy">
 
             <div class="event-content">
 
-              <h3>Aniversários</h3>
+              <div class="event-icon">
+                🎂
+              </div>
+
+              <h3>
+                Aniversários
+              </h3>
 
               <p>
-                Mais sabor para comemorar.
+                Comemore um momento especial
+                com sabor e praticidade.
               </p>
 
             </div>
 
           </article>
 
+
+          <!-- FESTAS -->
 
           <article class="event">
 
@@ -1171,36 +1350,54 @@
 
             <div class="event-content">
 
-              <h3>Festas</h3>
+              <div class="event-icon">
+                🎊
+              </div>
+
+              <h3>
+                Festas
+              </h3>
 
               <p>
-                Comida para partilhar bons momentos.
+                Opções para tornar os encontros
+                ainda mais agradáveis.
               </p>
 
             </div>
 
           </article>
 
+
+          <!-- CONVÍVIOS -->
 
           <article class="event">
 
             <img
               src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80"
-              alt="Evento"
+              alt="Convívio"
               loading="lazy">
 
             <div class="event-content">
 
-              <h3>Convívios</h3>
+              <div class="event-icon">
+                🥳
+              </div>
+
+              <h3>
+                Convívios
+              </h3>
 
               <p>
-                Uma experiência descontraída.
+                Bons momentos acompanhados
+                de comida saborosa.
               </p>
 
             </div>
 
           </article>
 
+
+          <!-- CORPORATIVO -->
 
           <article class="event">
 
@@ -1211,10 +1408,17 @@
 
             <div class="event-content">
 
-              <h3>Corporativos</h3>
+              <div class="event-icon">
+                💼
+              </div>
+
+              <h3>
+                Corporativos
+              </h3>
 
               <p>
-                Uma opção para empresas e equipas.
+                Uma opção para empresas,
+                equipas e reuniões.
               </p>
 
             </div>
@@ -1228,7 +1432,10 @@
     </section>
 
 
-    <!-- GALLERY -->
+    <!-- =========================
+         GALERIA
+    ========================== -->
+
     <section class="gallery" id="galeria">
 
       <div class="container">
@@ -1240,12 +1447,12 @@
           </div>
 
           <h2>
-            Uma experiência para ver e saborear.
+            Veja a experiência.
           </h2>
 
           <p>
-            Imagens ilustrativas para apresentar como
-            uma galeria profissional poderia funcionar no site.
+            Uma galeria visual para apresentar
+            produtos, ambiente e momentos.
           </p>
 
         </div>
@@ -1253,12 +1460,17 @@
 
         <div class="gallery-grid">
 
+
           <div class="gallery-item">
 
             <img
               src="https://commons.wikimedia.org/wiki/Special:Redirect/file/A%20cheeseburger.jpg"
               alt="Hambúrguer"
               loading="lazy">
+
+            <div class="gallery-caption">
+              🍔 Hambúrguer
+            </div>
 
           </div>
 
@@ -1270,6 +1482,10 @@
               alt="Cachorro-quente"
               loading="lazy">
 
+            <div class="gallery-caption">
+              🌭 Cachorro-quente
+            </div>
+
           </div>
 
 
@@ -1279,6 +1495,10 @@
               src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Fajitas-small.png"
               alt="Fahitas"
               loading="lazy">
+
+            <div class="gallery-caption">
+              🌮 Fahitas
+            </div>
 
           </div>
 
@@ -1290,6 +1510,10 @@
               alt="Comida"
               loading="lazy">
 
+            <div class="gallery-caption">
+              🍽️ Experiência gastronómica
+            </div>
+
           </div>
 
 
@@ -1299,6 +1523,10 @@
               src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1000&q=80"
               alt="Preparação de comida"
               loading="lazy">
+
+            <div class="gallery-caption">
+              👨‍🍳 Preparação
+            </div>
 
           </div>
 
@@ -1310,6 +1538,10 @@
               alt="Refeição"
               loading="lazy">
 
+            <div class="gallery-caption">
+              ❤️ Sabor & experiência
+            </div>
+
           </div>
 
         </div>
@@ -1319,7 +1551,10 @@
     </section>
 
 
-    <!-- PROCESS -->
+    <!-- =========================
+         COMO FUNCIONA
+    ========================== -->
+
     <section class="process">
 
       <div class="container">
@@ -1335,8 +1570,8 @@
           </h2>
 
           <p>
-            Uma apresentação clara ajuda o cliente a saber
-            o que fazer desde o primeiro contacto.
+            O cliente encontra as informações
+            e pode entrar em contacto rapidamente.
           </p>
 
         </div>
@@ -1344,16 +1579,19 @@
 
         <div class="process-grid">
 
+
           <div class="process-card">
 
             <div class="process-number">
               01
             </div>
 
-            <h3>Escolha o serviço</h3>
+            <h3>
+              Escolha o serviço
+            </h3>
 
             <p>
-              O cliente conhece as opções disponíveis
+              Conheça as opções disponíveis
               para o seu evento.
             </p>
 
@@ -1366,10 +1604,12 @@
               02
             </div>
 
-            <h3>Solicite informações</h3>
+            <h3>
+              Solicite informações
+            </h3>
 
             <p>
-              O contacto pode ser feito diretamente
+              Entre em contacto diretamente
               pelo WhatsApp.
             </p>
 
@@ -1382,11 +1622,13 @@
               03
             </div>
 
-            <h3>Combine os detalhes</h3>
+            <h3>
+              Combine os detalhes
+            </h3>
 
             <p>
-              Data, quantidade de pessoas e outros
-              detalhes podem ser tratados diretamente.
+              Data, quantidade de pessoas
+              e outros detalhes podem ser combinados.
             </p>
 
           </div>
@@ -1398,20 +1640,27 @@
     </section>
 
 
-    <!-- CTA -->
+    <!-- =========================
+         CTA
+    ========================== -->
+
     <section class="cta">
 
       <div class="container">
 
         <div class="cta-content">
 
+          <div class="small">
+            Duchess Burguer
+          </div>
+
           <h2>
             Está a organizar um evento?
           </h2>
 
           <p>
-            Entre em contacto com a Duchess Burguer
-            para conhecer as opções disponíveis.
+            Entre em contacto para conhecer
+            as opções disponíveis para a sua ocasião.
           </p>
 
           <a
@@ -1429,7 +1678,10 @@
     </section>
 
 
-    <!-- CONTACT -->
+    <!-- =========================
+         CONTACTO
+    ========================== -->
+
     <section class="contact" id="contacto">
 
       <div class="container">
@@ -1445,8 +1697,8 @@
           </h2>
 
           <p>
-            O cliente pode encontrar rapidamente
-            as principais informações de contacto.
+            Todas as informações principais
+            ficam disponíveis num só lugar.
           </p>
 
         </div>
@@ -1454,23 +1706,29 @@
 
         <div class="contact-grid">
 
+
           <div class="contact-card">
 
-            <h3>📍 Localização</h3>
+            <h3>
+              📍 Onde estamos
+            </h3>
 
             <div class="contact-item">
 
-              <strong>Endereço</strong>
+              <strong>
+                Endereço
+              </strong>
 
-              Rua Soba Mandume, Bairro Marçal,
-              Luanda.
+              Rua Soba Mandume,
+              Bairro Marçal, Luanda.
 
             </div>
 
-
             <div class="contact-item">
 
-              <strong>Referência</strong>
+              <strong>
+                Referência
+              </strong>
 
               Próximo à Cidadela Desportiva.
 
@@ -1481,34 +1739,38 @@
 
           <div class="contact-card">
 
-            <h3>📲 Fale connosco</h3>
+            <h3>
+              📲 Fale connosco
+            </h3>
 
             <div class="contact-item">
 
-              <strong>WhatsApp</strong>
+              <strong>
+                WhatsApp
+              </strong>
 
               +244 922 003 274
 
             </div>
 
-
             <div class="contact-item">
 
-              <strong>Atendimento</strong>
+              <strong>
+                Atendimento
+              </strong>
 
               Informações sobre menu,
               pedidos e eventos.
 
             </div>
 
-
             <a
               class="btn btn-gold"
-              style="margin-top:20px;width:100%;"
+              style="width:100%;margin-top:20px;"
               href="https://wa.me/244922003274?text=Olá%20Duchess%20Burguer!%20Gostaria%20de%20obter%20mais%20informações."
               target="_blank"
               rel="noopener">
-              Abrir WhatsApp
+              💬 Abrir WhatsApp
             </a>
 
           </div>
@@ -1522,7 +1784,10 @@
   </main>
 
 
-  <!-- DEMO NOTE -->
+  <!-- =========================
+       DEMO NOTE
+  ========================== -->
+
   <div class="demo-note">
 
     Demonstração conceptual criada por
@@ -1532,7 +1797,10 @@
   </div>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
   <footer>
 
     <div class="container footer-flex">
@@ -1550,7 +1818,10 @@
   </footer>
 
 
-  <!-- WHATSAPP FLOATING -->
+  <!-- =========================
+       WHATSAPP FLUTUANTE
+  ========================== -->
+
   <a
     class="whatsapp"
     href="https://wa.me/244922003274?text=Olá%20Duchess%20Burguer!%20Gostaria%20de%20saber%20mais."

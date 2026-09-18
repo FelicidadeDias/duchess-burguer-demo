@@ -6,1225 +6,1377 @@
 
 <title>Duchess Burguer | Mais do que sabor</title>
 
-<meta name="description" content="Duchess Burguer — fast food artesanal e serviço para eventos em Luanda.">
-
+<meta name="description" content="Duchess Burguer — Hambúrgueres, cachorros-quentes, fahitas e serviços para eventos em Luanda.">
 <meta name="theme-color" content="#0b0b0b">
 
 <style>
-
 :root{
-  --black:#090909;
-  --black2:#121212;
-  --black3:#1b1b1b;
-  --gold:#f5b52e;
-  --gold2:#ffca55;
-  --white:#ffffff;
-  --gray:#b9b9b9;
-  --green:#25d366;
-  --border:rgba(255,255,255,.10);
+    --black:#080808;
+    --black2:#111111;
+    --black3:#181818;
+    --gold:#d6a62b;
+    --gold2:#f0c75e;
+    --white:#ffffff;
+    --gray:#bdbdbd;
+    --green:#25D366;
+    --border:rgba(255,255,255,.09);
 }
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:var(--black);
-  color:var(--white);
-  line-height:1.6;
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--black);
+    color:var(--white);
+    line-height:1.6;
 }
 
 a{
-  text-decoration:none;
-  color:inherit;
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    max-width:100%;
+    display:block;
 }
 
 .container{
-  width:min(1120px,92%);
-  margin:auto;
+    width:min(1120px,92%);
+    margin:auto;
 }
 
 /* HEADER */
 
 header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(9,9,9,.94);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(8,8,8,.95);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
 }
 
 .nav{
-  min-height:72px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+    min-height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
 }
 
 .logo{
-  font-weight:900;
-  font-size:1.15rem;
-  letter-spacing:.5px;
+    font-size:22px;
+    font-weight:900;
+    letter-spacing:.5px;
 }
 
 .logo span{
-  color:var(--gold);
+    color:var(--gold);
 }
 
 .nav-links{
-  display:flex;
-  gap:24px;
-  align-items:center;
-  font-size:.9rem;
+    display:flex;
+    gap:25px;
+    align-items:center;
 }
 
 .nav-links a{
-  color:#ddd;
+    color:#ddd;
+    font-size:14px;
+    transition:.3s;
 }
 
 .nav-links a:hover{
-  color:var(--gold);
+    color:var(--gold2);
 }
 
-.nav-cta{
-  background:var(--gold);
-  color:#111!important;
-  padding:9px 14px;
-  border-radius:10px;
-  font-weight:800;
+.nav-btn{
+    background:var(--gold);
+    color:#080808!important;
+    padding:10px 16px;
+    border-radius:8px;
+    font-weight:bold;
 }
 
 /* HERO */
 
 .hero{
-  min-height:720px;
-  display:flex;
-  align-items:center;
-  position:relative;
-  overflow:hidden;
-
-  background:
-    radial-gradient(
-      circle at 78% 42%,
-      rgba(245,181,46,.28),
-      transparent 27%
-    ),
-    linear-gradient(
-      135deg,
-      #080808 20%,
-      #21190b 100%
-    );
+    min-height:650px;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 75% 35%,rgba(214,166,43,.18),transparent 35%),
+        radial-gradient(circle at 20% 80%,rgba(214,166,43,.08),transparent 30%),
+        linear-gradient(135deg,#070707,#141414);
 }
 
-.hero:after{
-  content:"🍔";
-  position:absolute;
-  right:3%;
-  top:50%;
-  transform:translateY(-50%) rotate(-7deg);
-  font-size:min(33vw,390px);
-  opacity:.95;
-  filter:drop-shadow(0 30px 35px rgba(0,0,0,.7));
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg,rgba(0,0,0,.75),rgba(0,0,0,.2));
+    pointer-events:none;
 }
 
 .hero-content{
-  position:relative;
-  z-index:2;
-  max-width:680px;
-  padding:90px 0;
+    position:relative;
+    z-index:2;
+    max-width:760px;
 }
 
 .badge{
-  display:inline-block;
-  color:var(--gold);
-  background:rgba(245,181,46,.10);
-  border:1px solid rgba(245,181,46,.35);
-  padding:8px 14px;
-  border-radius:30px;
-  font-size:.78rem;
-  font-weight:800;
-  margin-bottom:20px;
+    display:inline-block;
+    padding:8px 14px;
+    border:1px solid rgba(214,166,43,.45);
+    border-radius:30px;
+    color:var(--gold2);
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:22px;
+    background:rgba(214,166,43,.06);
 }
 
 .hero h1{
-  font-size:clamp(3.2rem,8vw,6.7rem);
-  line-height:.92;
-  letter-spacing:-4px;
-  margin-bottom:25px;
+    font-size:clamp(44px,7vw,78px);
+    line-height:1.02;
+    margin-bottom:22px;
+    font-weight:900;
 }
 
 .hero h1 span{
-  color:var(--gold);
+    color:var(--gold);
 }
 
-.hero-text{
-  color:#ddd;
-  font-size:1.1rem;
-  max-width:570px;
-  margin-bottom:32px;
+.hero p{
+    color:#d2d2d2;
+    font-size:19px;
+    max-width:650px;
+    margin-bottom:30px;
 }
 
 .buttons{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
 }
 
 .btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:50px;
-  padding:13px 20px;
-  border-radius:12px;
-  font-weight:800;
-  border:1px solid transparent;
-  transition:.2s;
-}
-
-.btn:hover{
-  transform:translateY(-2px);
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    padding:14px 22px;
+    border-radius:9px;
+    font-weight:bold;
+    transition:.3s;
+    border:1px solid transparent;
 }
 
 .btn-gold{
-  background:var(--gold);
-  color:#111;
+    background:var(--gold);
+    color:#080808;
 }
 
 .btn-gold:hover{
-  background:var(--gold2);
+    background:var(--gold2);
+    transform:translateY(-2px);
 }
 
-.btn-dark{
-  background:rgba(255,255,255,.05);
-  border-color:rgba(255,255,255,.2);
+.btn-outline{
+    border-color:rgba(255,255,255,.25);
+    color:white;
 }
 
-.btn-dark:hover{
-  border-color:var(--gold);
+.btn-outline:hover{
+    border-color:var(--gold);
+    color:var(--gold2);
+}
+
+/* STATS */
+
+.stats{
+    background:#0d0d0d;
+    border-bottom:1px solid var(--border);
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--border);
+}
+
+.stat{
+    text-align:center;
+    padding:28px 15px;
+    background:#0d0d0d;
+}
+
+.stat strong{
+    display:block;
+    color:var(--gold2);
+    font-size:25px;
+    margin-bottom:4px;
+}
+
+.stat span{
+    color:#aaa;
+    font-size:13px;
 }
 
 /* SECTIONS */
 
 section{
-  padding:85px 0;
+    padding:90px 0;
 }
 
 .section-title{
-  font-size:clamp(2.1rem,5vw,3rem);
-  line-height:1.1;
-  margin-bottom:12px;
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 50px;
 }
 
-.section-subtitle{
-  color:var(--gray);
-  max-width:700px;
-  margin-bottom:38px;
+.section-title small{
+    display:block;
+    color:var(--gold);
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    margin-bottom:10px;
+    font-size:12px;
+}
+
+.section-title h2{
+    font-size:clamp(32px,5vw,48px);
+    line-height:1.1;
+    margin-bottom:14px;
+}
+
+.section-title p{
+    color:var(--gray);
 }
 
 /* MENU */
 
 .menu{
-  background:#0d0d0d;
+    background:var(--black);
 }
 
 .menu-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
 }
 
 .menu-card{
-  position:relative;
-  min-height:270px;
-  padding:28px;
-  border-radius:22px;
-  overflow:hidden;
-
-  background:
-    radial-gradient(
-      circle at 80% 15%,
-      rgba(245,181,46,.18),
-      transparent 32%
-    ),
-    linear-gradient(
-      145deg,
-      #1b1b1b,
-      #101010
-    );
-
-  border:1px solid var(--border);
+    background:linear-gradient(145deg,#151515,#0e0e0e);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:32px 25px;
+    transition:.3s;
+    position:relative;
+    overflow:hidden;
 }
 
-.menu-number{
-  position:absolute;
-  right:20px;
-  top:10px;
-  font-size:5rem;
-  font-weight:900;
-  color:rgba(255,255,255,.035);
+.menu-card::before{
+    content:"";
+    position:absolute;
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    background:rgba(214,166,43,.08);
+    top:-50px;
+    right:-40px;
 }
 
-.food-icon{
-  font-size:3.3rem;
-  margin-bottom:22px;
+.menu-card:hover{
+    transform:translateY(-6px);
+    border-color:rgba(214,166,43,.5);
+}
+
+.menu-icon{
+    font-size:48px;
+    margin-bottom:20px;
 }
 
 .menu-card h3{
-  font-size:1.35rem;
-  margin-bottom:10px;
+    font-size:24px;
+    margin-bottom:10px;
 }
 
 .menu-card p{
-  color:var(--gray);
-  font-size:.95rem;
+    color:#aaa;
+    margin-bottom:22px;
+    font-size:14px;
 }
 
-.note{
-  margin-top:20px;
-  padding:15px;
-  border:1px dashed #444;
-  border-radius:12px;
-  color:#999;
-  font-size:.82rem;
+.menu-link{
+    color:var(--gold2);
+    font-size:14px;
+    font-weight:bold;
 }
 
-/* EXPERIENCE */
+/* EXPERIÊNCIA */
 
 .experience{
-  background:
-    linear-gradient(
-      135deg,
-      #171107,
-      #0d0d0d
-    );
+    background:#101010;
 }
 
 .experience-grid{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:20px;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:45px;
+    align-items:center;
 }
 
-.experience-main{
-  padding:38px;
-  border-radius:24px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #33240b,
-      #161616
-    );
-
-  border:1px solid rgba(245,181,46,.28);
+.experience-text h2{
+    font-size:clamp(32px,5vw,50px);
+    line-height:1.1;
+    margin-bottom:20px;
 }
 
-.experience-main h3{
-  font-size:2rem;
-  line-height:1.2;
-  margin-bottom:15px;
+.experience-text h2 span{
+    color:var(--gold);
 }
 
-.experience-main p{
-  color:#ddd;
+.experience-text p{
+    color:#bdbdbd;
+    margin-bottom:18px;
 }
 
-.event-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-  margin:28px 0;
+.check-list{
+    list-style:none;
+    margin:25px 0;
 }
 
-.event{
-  background:rgba(0,0,0,.28);
-  border:1px solid rgba(255,255,255,.08);
-  padding:14px;
-  border-radius:12px;
-  font-weight:700;
+.check-list li{
+    margin:13px 0;
+    color:#ddd;
 }
 
-.experience-side{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+.check-list li::before{
+    content:"✓";
+    color:var(--gold);
+    font-weight:bold;
+    margin-right:10px;
+}
+
+.experience-box{
+    min-height:390px;
+    border-radius:24px;
+    border:1px solid rgba(214,166,43,.25);
+    background:
+        radial-gradient(circle at center,rgba(214,166,43,.18),transparent 50%),
+        linear-gradient(145deg,#191919,#090909);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px;
+}
+
+.experience-box-inner{
+    max-width:330px;
 }
 
 .big-icon{
-  font-size:4.5rem;
-  margin-bottom:15px;
+    font-size:80px;
+    margin-bottom:18px;
 }
 
-/* GALERIA */
+.experience-box h3{
+    font-size:27px;
+    margin-bottom:10px;
+}
+
+.experience-box p{
+    color:#aaa;
+}
+
+/* EVENTS */
+
+.events{
+    background:var(--black);
+}
+
+.event-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.event-card{
+    padding:28px 20px;
+    text-align:center;
+    border:1px solid var(--border);
+    border-radius:16px;
+    background:#111;
+    transition:.3s;
+}
+
+.event-card:hover{
+    border-color:rgba(214,166,43,.5);
+    transform:translateY(-4px);
+}
+
+.event-icon{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.event-card h3{
+    font-size:19px;
+    margin-bottom:8px;
+}
+
+.event-card p{
+    color:#999;
+    font-size:13px;
+}
+
+/* GALLERY */
 
 .gallery{
-  background:#0a0a0a;
+    background:#101010;
 }
 
 .gallery-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
 }
 
-.gallery-card{
-  min-height:230px;
-  border-radius:20px;
-  overflow:hidden;
-
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-
-  padding:22px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #292929,
-      #101010
-    );
-
-  border:1px solid var(--border);
-  position:relative;
+.gallery-item{
+    min-height:210px;
+    border-radius:17px;
+    border:1px solid var(--border);
+    background:
+        radial-gradient(circle at center,rgba(214,166,43,.15),transparent 45%),
+        linear-gradient(145deg,#191919,#0b0b0b);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:25px;
+    position:relative;
+    overflow:hidden;
 }
 
-.gallery-card:before{
-  content:"";
-  position:absolute;
-  width:180px;
-  height:180px;
-  border-radius:50%;
-  background:rgba(245,181,46,.14);
-  top:-70px;
-  right:-50px;
+.gallery-item span{
+    position:relative;
+    z-index:2;
 }
 
 .gallery-icon{
-  position:relative;
-  z-index:2;
-  font-size:3.5rem;
-  margin-bottom:15px;
+    display:block;
+    font-size:48px;
+    margin-bottom:10px;
 }
 
-.gallery-card h3,
-.gallery-card p{
-  position:relative;
-  z-index:2;
+.gallery-title{
+    font-weight:bold;
+    font-size:18px;
 }
 
-.gallery-card p{
-  color:#aaa;
-  font-size:.85rem;
+.gallery-note{
+    text-align:center;
+    margin-top:25px;
+    color:#777;
+    font-size:12px;
 }
 
 /* PROCESS */
 
 .process{
-  background:#101010;
+    background:var(--black);
 }
 
-.steps{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
+.process-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
 }
 
-.step{
-  background:#171717;
-  border:1px solid var(--border);
-  padding:28px;
-  border-radius:20px;
+.process-card{
+    padding:30px;
+    background:#111;
+    border:1px solid var(--border);
+    border-radius:16px;
 }
 
-.step-number{
-  width:45px;
-  height:45px;
-  display:grid;
-  place-items:center;
-  background:var(--gold);
-  color:#111;
-  border-radius:50%;
-  font-weight:900;
-  margin-bottom:18px;
+.number{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:var(--gold);
+    color:#080808;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:900;
+    margin-bottom:18px;
 }
 
-.step h3{
-  margin-bottom:8px;
+.process-card h3{
+    margin-bottom:9px;
 }
 
-.step p{
-  color:var(--gray);
+.process-card p{
+    color:#999;
+    font-size:14px;
+}
+
+/* CTA */
+
+.cta{
+    padding:75px 0;
+    background:
+        radial-gradient(circle at center,rgba(214,166,43,.16),transparent 55%),
+        #111;
+    text-align:center;
+}
+
+.cta h2{
+    font-size:clamp(32px,5vw,52px);
+    margin-bottom:15px;
+}
+
+.cta p{
+    color:#aaa;
+    max-width:600px;
+    margin:0 auto 25px;
 }
 
 /* CONTACT */
 
 .contact{
-  background:var(--gold);
-  color:#111;
+    background:#080808;
 }
 
-.contact .section-subtitle{
-  color:#3d300d;
-  margin-bottom:12px;
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
 }
 
-.contact-layout{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:30px;
+.contact-card{
+    padding:30px;
+    border:1px solid var(--border);
+    border-radius:16px;
+    background:#111;
 }
 
-.contact-info{
-  font-weight:800;
-  margin-top:15px;
+.contact-card h3{
+    color:var(--gold2);
+    margin-bottom:10px;
 }
 
-.whatsapp{
-  background:#111;
-  color:#fff;
-  white-space:nowrap;
+.contact-card p{
+    color:#aaa;
+    margin-bottom:6px;
+}
+
+.contact-card a{
+    color:#fff;
+}
+
+.contact-card a:hover{
+    color:var(--gold2);
 }
 
 /* FOOTER */
 
 footer{
-  background:#080808;
-  text-align:center;
-  padding:30px 0;
-  color:#888;
-  font-size:.82rem;
+    background:#050505;
+    border-top:1px solid var(--border);
+    padding:30px 0;
+    text-align:center;
 }
 
-.footer-brand{
-  color:var(--gold);
+footer p{
+    color:#777;
+    font-size:12px;
 }
 
-/* FLOATING WHATSAPP */
-
-.float-wa{
-  position:fixed;
-  right:18px;
-  bottom:18px;
-  z-index:2000;
-
-  width:60px;
-  height:60px;
-
-  display:grid;
-  place-items:center;
-
-  background:var(--green);
-  color:#fff;
-
-  border-radius:50%;
-  font-size:1.7rem;
-
-  box-shadow:0 12px 30px rgba(0,0,0,.45);
-
-  transition:.2s;
+.demo{
+    margin-top:8px;
+    color:#555!important;
 }
 
-.float-wa:hover{
-  transform:scale(1.07);
+/* WHATSAPP */
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:var(--green);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:29px;
+    box-shadow:0 8px 30px rgba(0,0,0,.4);
+    z-index:999;
+    transition:.3s;
+}
+
+.whatsapp:hover{
+    transform:scale(1.08);
 }
 
 /* MOBILE */
 
 @media(max-width:850px){
 
-  .nav-links{
-    display:none;
-  }
+    .nav{
+        min-height:65px;
+    }
 
-  .hero{
-    min-height:680px;
-  }
+    .nav-links{
+        display:none;
+    }
 
-  .hero:after{
-    right:-60px;
-    opacity:.18;
-    font-size:290px;
-  }
+    .hero{
+        min-height:600px;
+    }
 
-  .menu-grid,
-  .gallery-grid,
-  .steps{
-    grid-template-columns:1fr;
-  }
+    .hero h1{
+        font-size:48px;
+    }
 
-  .experience-grid{
-    grid-template-columns:1fr;
-  }
+    .hero p{
+        font-size:16px;
+    }
 
-  .contact-layout{
-    flex-direction:column;
-    align-items:flex-start;
-  }
+    .stats-grid{
+        grid-template-columns:1fr;
+        gap:1px;
+    }
 
+    .menu-grid{
+        grid-template-columns:1fr;
+    }
+
+    .experience-grid{
+        grid-template-columns:1fr;
+    }
+
+    .event-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .process-grid{
+        grid-template-columns:1fr;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
 }
 
 @media(max-width:520px){
 
-  section{
-    padding:60px 0;
-  }
+    section{
+        padding:65px 0;
+    }
 
-  .hero-content{
-    padding:65px 0;
-  }
+    .hero{
+        min-height:590px;
+    }
 
-  .hero h1{
-    font-size:3.35rem;
-    letter-spacing:-2px;
-  }
+    .hero h1{
+        font-size:42px;
+    }
 
-  .hero-text{
-    font-size:1rem;
-  }
+    .buttons{
+        flex-direction:column;
+    }
 
-  .buttons{
-    flex-direction:column;
-  }
+    .btn{
+        width:100%;
+    }
 
-  .buttons .btn{
-    width:100%;
-  }
+    .event-grid,
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
 
-  .event-grid{
-    grid-template-columns:1fr;
-  }
-
-  .experience-main{
-    padding:26px;
-  }
-
-  .contact-layout .btn{
-    width:100%;
-  }
-
+    .experience-box{
+        min-height:300px;
+    }
 }
-
 </style>
 </head>
 
 <body>
 
 <!-- HEADER -->
-
 <header>
+    <div class="container nav">
 
-<div class="container nav">
+        <a href="#inicio" class="logo">
+            Duchess <span>Burguer</span>
+        </a>
 
-<a href="#" class="logo">
-DUCHESS <span>BURGUER</span>
-</a>
+        <nav class="nav-links">
+            <a href="#menu">Menu</a>
+            <a href="#eventos">Eventos</a>
+            <a href="#experiencia">Experiência</a>
+            <a href="#contacto" class="nav-btn">Pedir orçamento</a>
+        </nav>
 
-<nav class="nav-links">
-
-<a href="#menu">Menu</a>
-
-<a href="#eventos">Eventos</a>
-
-<a href="#galeria">Experiência</a>
-
-<a href="#contacto" class="nav-cta">
-WhatsApp
-</a>
-
-</nav>
-
-</div>
-
+    </div>
 </header>
 
 
 <!-- HERO -->
+<section class="hero" id="inicio">
 
-<section class="hero">
+    <div class="container">
 
-<div class="container hero-content">
+        <div class="hero-content">
 
-<div class="badge">
-🍔 FAST FOOD • EVENTOS • EXPERIÊNCIA
-</div>
+            <span class="badge">
+                🍔 FAST FOOD • EVENTOS • EXPERIÊNCIA
+            </span>
 
-<h1>
-Mais do que sabor.
-<br>
-<span>É experiência.</span>
-</h1>
+            <h1>
+                Mais do que sabor.<br>
+                <span>É experiência.</span>
+            </h1>
 
-<p class="hero-text">
+            <p>
+                Hambúrgueres, cachorros-quentes e fahitas preparados
+                para transformar cada refeição e cada evento em uma
+                experiência especial.
+            </p>
 
-Hambúrgueres, cachorros-quentes e fahitas
-preparados na hora para tornar o seu evento
-ainda mais especial.
+            <div class="buttons">
 
-</p>
+                <a
+                    class="btn btn-gold"
+                    href="https://wa.me/244922003274?text=Olá%20Duchess%20Burguer!%20Gostaria%20de%20saber%20mais%20sobre%20o%20menu."
+                    target="_blank"
+                >
+                    📲 Ver menu pelo WhatsApp
+                </a>
 
-<div class="buttons">
+                <a
+                    class="btn btn-outline"
+                    href="#eventos"
+                >
+                    Conhecer eventos
+                </a>
 
-<a href="#menu" class="btn btn-gold">
-🍔 Explorar o menu
-</a>
+            </div>
 
-<a
-href="https://wa.me/244922003274?text=Ol%C3%A1%20Duchess%20Burguer!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento."
-target="_blank"
-rel="noopener"
-class="btn btn-dark"
->
-📲 Pedir orçamento
-</a>
+        </div>
 
-</div>
+    </div>
 
-</div>
+</section>
+
+
+<!-- STATS -->
+<section class="stats">
+
+    <div class="container stats-grid">
+
+        <div class="stat">
+            <strong>🍔</strong>
+            <span>Fast Food</span>
+        </div>
+
+        <div class="stat">
+            <strong>🎉</strong>
+            <span>Eventos</span>
+        </div>
+
+        <div class="stat">
+            <strong>📍</strong>
+            <span>Luanda</span>
+        </div>
+
+    </div>
 
 </section>
 
 
 <!-- MENU -->
+<section class="menu" id="menu">
 
-<section id="menu" class="menu">
+    <div class="container">
 
-<div class="container">
+        <div class="section-title">
 
-<h2 class="section-title">
-Sabores que fazem a diferença
-</h2>
+            <small>O nosso menu</small>
 
-<p class="section-subtitle">
+            <h2>
+                Sabor para todos os momentos
+            </h2>
 
-Uma seleção de opções divulgadas pela Duchess
-Burguer para clientes e eventos.
+            <p>
+                Uma seleção de opções para quem procura
+                uma refeição rápida, saborosa e especial.
+            </p>
 
-</p>
-
-
-<div class="menu-grid">
-
-
-<article class="menu-card">
-
-<div class="menu-number">
-01
-</div>
-
-<div class="food-icon">
-🍔
-</div>
-
-<h3>
-Hambúrguer artesanal
-</h3>
-
-<p>
-
-Hambúrguer suculento, preparado com cuidado
-e pensado para proporcionar uma verdadeira
-experiência de sabor.
-
-</p>
-
-</article>
+        </div>
 
 
-<article class="menu-card">
+        <div class="menu-grid">
 
-<div class="menu-number">
-02
-</div>
+            <article class="menu-card">
 
-<div class="food-icon">
-🌭
-</div>
+                <div class="menu-icon">🍔</div>
 
-<h3>
-Cachorro-quente
-</h3>
+                <h3>Hambúrgueres</h3>
 
-<p>
+                <p>
+                    Opções preparadas para quem não abre mão
+                    de sabor e uma boa experiência.
+                </p>
 
-Uma opção irresistível, incluindo versões
-em pães coloridos que podem ser uma atração
-especial nas festas.
+                <a
+                    class="menu-link"
+                    href="https://wa.me/244922003274?text=Olá%20Duchess%20Burguer!%20Gostaria%20de%20conhecer%20as%20opções%20de%20hambúrgueres."
+                    target="_blank"
+                >
+                    Saber mais →
+                </a>
 
-</p>
-
-</article>
-
-
-<article class="menu-card">
-
-<div class="menu-number">
-03
-</div>
-
-<div class="food-icon">
-🌯
-</div>
-
-<h3>
-Fahita Duchess
-</h3>
-
-<p>
-
-Fahitas preparadas na hora, recheadas e
-pensadas para completar a experiência
-gastronómica do evento.
-
-</p>
-
-</article>
+            </article>
 
 
-</div>
+            <article class="menu-card">
+
+                <div class="menu-icon">🌭</div>
+
+                <h3>Cachorros-quentes</h3>
+
+                <p>
+                    Uma opção prática e saborosa para
+                    diferentes ocasiões.
+                </p>
+
+                <a
+                    class="menu-link"
+                    href="https://wa.me/244922003274?text=Olá%20Duchess%20Burguer!%20Gostaria%20de%20conhecer%20os%20cachorros-quentes."
+                    target="_blank"
+                >
+                    Saber mais →
+                </a>
+
+            </article>
 
 
-<div class="note">
+            <article class="menu-card">
 
-<strong>Demonstração comercial:</strong>
-os preços, fotografias, composição dos pratos
-e demais informações poderão ser atualizados
-com os dados oficiais fornecidos pela Duchess Burguer.
+                <div class="menu-icon">🌯</div>
 
-</div>
+                <h3>Fahitas</h3>
 
-</div>
+                <p>
+                    Uma alternativa cheia de sabor para
+                    completar a experiência Duchess.
+                </p>
+
+                <a
+                    class="menu-link"
+                    href="https://wa.me/244922003274?text=Olá%20Duchess%20Burguer!%20Gostaria%20de%20conhecer%20as%20fahitas."
+                    target="_blank"
+                >
+                    Saber mais →
+                </a>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIÊNCIA -->
+<section class="experience" id="experiencia">
+
+    <div class="container experience-grid">
+
+        <div class="experience-text">
+
+            <small style="color:#d6a62b;font-weight:bold;letter-spacing:2px;">
+                MAIS QUE COMIDA
+            </small>
+
+            <h2>
+                Uma experiência para
+                <span>ver e saborear.</span>
+            </h2>
+
+            <p>
+                A Duchess Burguer pode levar a experiência
+                diretamente para o seu evento.
+            </p>
+
+            <p>
+                A proposta é simples: boa comida, preparação
+                e atendimento pensados para tornar o momento
+                ainda mais especial.
+            </p>
+
+            <ul class="check-list">
+
+                <li>Atendimento para diferentes ocasiões</li>
+
+                <li>Preparação para eventos</li>
+
+                <li>Opções de fast food</li>
+
+                <li>Possibilidade de solicitar orçamento</li>
+
+            </ul>
+
+            <a
+                class="btn btn-gold"
+                href="https://wa.me/244922003274?text=Olá%20Duchess%20Burguer!%20Gostaria%20de%20solicitar%20um%20orçamento."
+                target="_blank"
+            >
+                Solicitar orçamento
+            </a>
+
+        </div>
+
+
+        <div class="experience-box">
+
+            <div class="experience-box-inner">
+
+                <div class="big-icon">🍔</div>
+
+                <h3>
+                    Sabor que marca
+                </h3>
+
+                <p>
+                    Uma experiência pensada para
+                    momentos que merecem ser lembrados.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 
 <!-- EVENTOS -->
+<section class="events" id="eventos">
 
-<section id="eventos" class="experience">
+    <div class="container">
 
-<div class="container">
+        <div class="section-title">
 
-<h2 class="section-title">
-O sabor vai até ao seu evento
-</h2>
+            <small>Para os seus momentos</small>
 
-<p class="section-subtitle">
+            <h2>
+                Leve a Duchess para o seu evento
+            </h2>
 
-Segundo as informações públicas da Duchess Burguer,
-o serviço também é direcionado para eventos,
-com preparação no local.
+            <p>
+                Uma solução prática para quem quer oferecer
+                uma experiência gastronómica diferente aos convidados.
+            </p>
 
-</p>
-
-
-<div class="experience-grid">
-
-
-<div class="experience-main">
-
-<h3>
-Você cuida dos convidados.
-<br>
-A Duchess cuida do sabor.
-</h3>
-
-<p>
-
-Leve uma experiência de fast food preparada
-na hora para os seus convidados.
-
-</p>
+        </div>
 
 
-<div class="event-grid">
+        <div class="event-grid">
 
-<div class="event">
-🎂 Aniversários
-</div>
+            <article class="event-card">
 
-<div class="event">
-🎉 Festas
-</div>
+                <div class="event-icon">🎂</div>
 
-<div class="event">
-🥳 Convívios
-</div>
+                <h3>Aniversários</h3>
 
-<div class="event">
-💼 Eventos corporativos
-</div>
+                <p>
+                    Torne a celebração ainda mais especial.
+                </p>
 
-<div class="event">
-💍 Casamentos
-</div>
-
-<div class="event">
-🔥 Serviço ao vivo
-</div>
-
-</div>
+            </article>
 
 
-<a
-href="https://wa.me/244922003274?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20um%20evento."
-target="_blank"
-rel="noopener"
-class="btn btn-gold"
->
-📲 Solicitar orçamento
-</a>
+            <article class="event-card">
 
-</div>
+                <div class="event-icon">🎉</div>
 
+                <h3>Festas</h3>
 
-<div class="menu-card experience-side">
+                <p>
+                    Mais sabor para os momentos de diversão.
+                </p>
 
-<div class="big-icon">
-👨‍🍳
-</div>
-
-<h3>
-Preparado na hora
-</h3>
-
-<p>
-
-A proposta é levar o conceito de fast food
-diretamente para o local da celebração.
-
-</p>
-
-<br>
-
-<p>
-
-Uma experiência mais dinâmica para os convidados,
-com comida preparada no momento.
-
-</p>
-
-</div>
+            </article>
 
 
-</div>
+            <article class="event-card">
 
-</div>
+                <div class="event-icon">🥳</div>
+
+                <h3>Convívios</h3>
+
+                <p>
+                    Uma opção prática para reunir pessoas.
+                </p>
+
+            </article>
+
+
+            <article class="event-card">
+
+                <div class="event-icon">💼</div>
+
+                <h3>Corporativos</h3>
+
+                <p>
+                    Uma experiência diferente para empresas.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
 
 </section>
 
 
 <!-- GALERIA -->
+<section class="gallery">
 
-<section id="galeria" class="gallery">
+    <div class="container">
 
-<div class="container">
+        <div class="section-title">
 
-<h2 class="section-title">
-Uma experiência para ver e saborear
-</h2>
+            <small>Experiência Duchess</small>
 
-<p class="section-subtitle">
+            <h2>
+                Uma experiência para ver e saborear
+            </h2>
 
-Esta área foi preparada para receber as
-fotografias oficiais dos produtos e eventos
-da Duchess Burguer.
+            <p>
+                Cada detalhe pode ser apresentado de forma simples,
+                moderna e visual para os clientes.
+            </p>
 
-</p>
-
-
-<div class="gallery-grid">
-
-
-<div class="gallery-card">
-
-<div class="gallery-icon">
-🍔
-</div>
-
-<h3>
-Hambúrgueres
-</h3>
-
-<p>
-Espaço para fotografia oficial do produto.
-</p>
-
-</div>
+        </div>
 
 
-<div class="gallery-card">
+        <div class="gallery-grid">
 
-<div class="gallery-icon">
-🌭
-</div>
+            <div class="gallery-item">
 
-<h3>
-Cachorros-quentes
-</h3>
+                <div>
+                    <span class="gallery-icon">🍔</span>
+                    <span class="gallery-title">
+                        Hambúrgueres
+                    </span>
+                </div>
 
-<p>
-Espaço para fotografia oficial do produto.
-</p>
-
-</div>
+            </div>
 
 
-<div class="gallery-card">
+            <div class="gallery-item">
 
-<div class="gallery-icon">
-🌯
-</div>
+                <div>
+                    <span class="gallery-icon">🌭</span>
+                    <span class="gallery-title">
+                        Cachorros-quentes
+                    </span>
+                </div>
 
-<h3>
-Fahitas
-</h3>
-
-<p>
-Espaço para fotografia oficial do produto.
-</p>
-
-</div>
+            </div>
 
 
-<div class="gallery-card">
+            <div class="gallery-item">
 
-<div class="gallery-icon">
-🎉
-</div>
+                <div>
+                    <span class="gallery-icon">🌯</span>
+                    <span class="gallery-title">
+                        Fahitas
+                    </span>
+                </div>
 
-<h3>
-Eventos
-</h3>
-
-<p>
-Espaço para fotografias de eventos realizados.
-</p>
-
-</div>
+            </div>
 
 
-<div class="gallery-card">
+            <div class="gallery-item">
 
-<div class="gallery-icon">
-👨‍🍳
-</div>
+                <div>
+                    <span class="gallery-icon">🎉</span>
+                    <span class="gallery-title">
+                        Eventos
+                    </span>
+                </div>
 
-<h3>
-Preparação ao vivo
-</h3>
-
-<p>
-Espaço para mostrar a equipa em ação.
-</p>
-
-</div>
+            </div>
 
 
-<div class="gallery-card">
+            <div class="gallery-item">
 
-<div class="gallery-icon">
-✨
-</div>
+                <div>
+                    <span class="gallery-icon">👨‍🍳</span>
+                    <span class="gallery-title">
+                        Preparação
+                    </span>
+                </div>
 
-<h3>
-A experiência Duchess
-</h3>
-
-<p>
-Espaço para uma imagem de destaque da marca.
-</p>
-
-</div>
+            </div>
 
 
-</div>
+            <div class="gallery-item">
 
-</div>
+                <div>
+                    <span class="gallery-icon">✨</span>
+                    <span class="gallery-title">
+                        A experiência Duchess
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <p class="gallery-note">
+            As imagens oficiais da marca podem ser adicionadas
+            posteriormente para personalizar completamente o site.
+        </p>
+
+    </div>
 
 </section>
 
 
-<!-- COMO FUNCIONA -->
-
+<!-- PROCESSO -->
 <section class="process">
 
-<div class="container">
+    <div class="container">
 
-<h2 class="section-title">
-Organizar o seu evento pode ser simples
-</h2>
+        <div class="section-title">
 
-<p class="section-subtitle">
+            <small>Simples e rápido</small>
 
-Entre em contacto e apresente os detalhes
-do seu evento para receber informações.
+            <h2>
+                Organizar o seu evento pode ser simples
+            </h2>
 
-</p>
+            <p>
+                O cliente encontra a informação e entra em contacto
+                diretamente pelo WhatsApp.
+            </p>
 
-
-<div class="steps">
-
-
-<div class="step">
-
-<div class="step-number">
-1
-</div>
-
-<h3>
-Fale connosco
-</h3>
-
-<p>
-
-Envie uma mensagem pelo WhatsApp e
-conte-nos o tipo de evento que está
-a organizar.
-
-</p>
-
-</div>
+        </div>
 
 
-<div class="step">
+        <div class="process-grid">
 
-<div class="step-number">
-2
-</div>
+            <article class="process-card">
 
-<h3>
-Envie os detalhes
-</h3>
+                <div class="number">1</div>
 
-<p>
+                <h3>Conheça</h3>
 
-Informe a data, local, número de convidados
-e o tipo de serviço que procura.
+                <p>
+                    Veja as opções disponíveis e descubra
+                    os serviços para eventos.
+                </p>
 
-</p>
-
-</div>
+            </article>
 
 
-<div class="step">
+            <article class="process-card">
 
-<div class="step-number">
-3
-</div>
+                <div class="number">2</div>
 
-<h3>
-Receba a proposta
-</h3>
+                <h3>Escolha</h3>
 
-<p>
+                <p>
+                    Informe o tipo de evento, quantidade de pessoas
+                    e o que pretende.
+                </p>
 
-A equipa poderá analisar o pedido e
-apresentar as opções disponíveis.
-
-</p>
-
-</div>
+            </article>
 
 
-</div>
+            <article class="process-card">
 
-</div>
+                <div class="number">3</div>
+
+                <h3>Fale com a Duchess</h3>
+
+                <p>
+                    Envie o pedido diretamente pelo WhatsApp
+                    e solicite o seu orçamento.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+<section class="cta">
+
+    <div class="container">
+
+        <h2>
+            Está a organizar um evento?
+        </h2>
+
+        <p>
+            Fale com a Duchess Burguer e descubra como
+            tornar o seu momento ainda mais saboroso.
+        </p>
+
+        <a
+            class="btn btn-gold"
+            href="https://wa.me/244922003274?text=Olá%20Duchess%20Burguer!%20Estou%20a%20organizar%20um%20evento%20e%20gostaria%20de%20solicitar%20um%20orçamento."
+            target="_blank"
+        >
+            📲 Pedir orçamento pelo WhatsApp
+        </a>
+
+    </div>
 
 </section>
 
 
 <!-- CONTACTO -->
+<section class="contact" id="contacto">
 
-<section id="contacto" class="contact">
+    <div class="container">
 
-<div class="container contact-layout">
+        <div class="section-title">
 
-<div>
+            <small>Fale connosco</small>
 
-<h2 class="section-title">
-Vamos falar?
-</h2>
+            <h2>
+                Duchess Burguer
+            </h2>
 
-<p class="section-subtitle">
+            <p>
+                Para pedidos, informações ou orçamento para eventos,
+                entre em contacto diretamente.
+            </p>
 
-Solicite informações ou peça um orçamento
-diretamente pelo WhatsApp.
-
-</p>
-
-<div class="contact-info">
-
-📍 Rua Soba Mandume,
-Bairro Marçal,
-próximo à Cidadela Desportiva,
-Luanda.
-
-<br><br>
-
-📱 WhatsApp:
-922 003 274
-
-</div>
-
-</div>
+        </div>
 
 
-<a
-href="https://wa.me/244922003274?text=Ol%C3%A1%20Duchess%20Burguer!%20Vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20saber%20mais."
-target="_blank"
-rel="noopener"
-class="btn whatsapp"
->
-📲 Falar pelo WhatsApp
-</a>
+        <div class="contact-grid">
 
-</div>
+            <div class="contact-card">
+
+                <h3>📍 Localização</h3>
+
+                <p>
+                    Rua Soba Mandume
+                </p>
+
+                <p>
+                    Bairro Marçal, Luanda
+                </p>
+
+                <p>
+                    Próximo à Cidadela Desportiva
+                </p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <h3>📱 WhatsApp</h3>
+
+                <p>
+                    Atendimento e pedidos:
+                </p>
+
+                <p>
+                    <a
+                        href="https://wa.me/244922003274"
+                        target="_blank"
+                    >
+                        +244 922 003 274
+                    </a>
+                </p>
+
+                <br>
+
+                <a
+                    class="btn btn-gold"
+                    href="https://wa.me/244922003274?text=Olá%20Duchess%20Burguer!%20Gostaria%20de%20mais%20informações."
+                    target="_blank"
+                >
+                    Enviar mensagem
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 
 <!-- FOOTER -->
-
 <footer>
 
-<div class="container">
+    <div class="container">
 
-© 2026 Duchess Burguer
+        <p>
+            © 2026 Duchess Burguer. Todos os direitos reservados.
+        </p>
 
-<br>
+        <p class="demo">
+            Demonstração digital criada por Fely e Amigos | Soluções Digitais.
+        </p>
 
-Demonstração personalizada por
-
-<span class="footer-brand">
-Fely e Amigos | Soluções Digitais
-</span>
-
-</div>
+    </div>
 
 </footer>
 
 
 <!-- WHATSAPP FLUTUANTE -->
-
 <a
-class="float-wa"
-href="https://wa.me/244922003274?text=Ol%C3%A1%20Duchess%20Burguer!"
-target="_blank"
-rel="noopener"
-aria-label="WhatsApp Duchess Burguer"
+    class="whatsapp"
+    href="https://wa.me/244922003274?text=Olá%20Duchess%20Burguer!%20Gostaria%20de%20mais%20informações."
+    target="_blank"
+    aria-label="Falar com Duchess Burguer pelo WhatsApp"
 >
-💬
+    ☎
 </a>
+
 
 </body>
 </html>
